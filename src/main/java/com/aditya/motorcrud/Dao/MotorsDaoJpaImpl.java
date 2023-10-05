@@ -31,4 +31,25 @@ public class MotorsDaoJpaImpl implements MotorDao{
         //return result
         return Motors;
     }
+
+    @Override
+    public Motors findById(int theId) {
+        Motors theMotors = entityManager.find(Motors.class,theId);
+        return theMotors;
+    }
+
+    @Override
+    public Motors save(Motors theMotors) {
+        Motors dbMotors = entityManager.merge(theMotors);
+
+        return dbMotors;
+    }
+
+    @Override
+    public Void deleteById(int theId) {
+        Motors theMotors = entityManager.find(Motors.class, theId);
+
+        entityManager.remove(theMotors);
+        return null;
+    }
 }
