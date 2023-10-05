@@ -20,7 +20,7 @@ public class MotorsRestController {
         motorDao = theMotorDao;
     }
 
-    //explore "/motors" and return a list of motors
+    //explore "/motors" and return a list
     @GetMapping("Motors")
     public List<Motors> findAll(){
      return motorDao.findAll();
