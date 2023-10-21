@@ -1,41 +1,51 @@
 package com.aditya.motorcrud.Services;
 
-import com.aditya.motorcrud.Dao.MotorDao;
+import com.aditya.motorcrud.Dao.MotorRepository;
 import com.aditya.motorcrud.Entity.Motors;
-import jakarta.transaction.Transactional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public class MotorServiceImpl implements MotorsService{
 
-    private MotorDao motorDao;
+    private MotorRepository motorRepository;
 
     @Autowired
-    public MotorServiceImpl(MotorDao theMotorDao){
-        motorDao = theMotorDao;
+    public MotorServiceImpl(MotorRepository theMotorRepository){
+        motorRepository = theMotorRepository;
     }
     @Override
     public List<Motors> findAll() {
-        return motorDao.findAll();
+        return motorRepository.findAll();
     }
 
     @Override
     public Motors findById(int theId) {
-        return motorDao.findById(theId);
+        Optional<Motors> result = motorRepository.findById(theId);
+
+        Motors theMotors = null;
+        if (result.isPresent()){
+            theMotors = result.get();
+        }
+        return theMotors;
     }
 
-    @Transactional
     @Override
     public Motors save(Motors theMotors) {
-        return motorDao.save(theMotors);
+        return motorRepository.save(theMotors);
     }
 
-    @Transactional
     @Override
     public Void deleteById(int theId) {
-        return motorDao.deleteById(theId);
+        Optional<Motors> result = motorRepository.findById(theId);
+
+        Motors theMotors = null;
+        if (result.isPresent()){
+            motorRepository.deleteById(theId);
+        }
+        return null;
     }
 }
