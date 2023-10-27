@@ -19,7 +19,7 @@ public class MotorServiceImpl implements MotorsService{
     }
     @Override
     public List<Motors> findAll() {
-        return motorRepository.findAll();
+        return motorRepository.findAllByOrderByLastNameAsc();
     }
 
     @Override
