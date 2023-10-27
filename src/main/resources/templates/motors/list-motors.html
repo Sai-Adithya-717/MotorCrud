@@ -1,0 +1,50 @@
+<!DOCTYPE HTML>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+
+	<title>Motors Directory</title>
+</head>
+
+<body>
+
+<div class="container">
+
+	<h3>Motors Directory</h3>
+	<hr>
+
+	<table class="table table-bordered table-striped">
+		<thead class="table-dark">
+			<tr>
+				<th>First Name</th>
+				<th>Last Name</th>
+				<th>Depth</th>
+				<th>Type</th>
+			</tr>
+		</thead>
+		
+		<tbody>
+			<tr th:each="tempMotor: ${motors}">
+			
+				<td th:text="${tempMotor.firstName}">
+				<td th:text="${tempMotor.lastName}">
+				<td th:text="${tempMotor.Depth}">
+				<td th:text="${tempMotor.Type}">
+				
+			</tr>
+		</tbody>		
+	</table>
+	
+</div>
+	
+</body>
+</html>
+
+
+
