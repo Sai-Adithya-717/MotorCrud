@@ -1,5 +1,5 @@
 <!DOCTYPE HTML>
-<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
 
 <head>
     <!-- Required meta tags -->
@@ -17,11 +17,18 @@
 <div class="container">
 
 	<h3>Motors Directory</h3>
-	<hr>
+
+	<p>
+		Welcome <span sec:authentication="principal.username"></span>
+	</p>
+
 	<a th:href="@{/motors/showAddForm}"
 	class="btn btn-info btn-sm">
 		Add Motor
 	</a>
+
+	<br>
+	<br>
 	<table class="table table-bordered table-striped">
 		<thead class="table-dark">
 			<tr>
@@ -29,7 +36,7 @@
 				<th>Last Name</th>
 				<th>Depth</th>
 				<th>Type</th>
-				<th>Action</th>
+				<div sec:authorize="hasRole('MANAGER')"><th>Action</th></div>
 			</tr>
 		</thead>
 		
@@ -41,6 +48,7 @@
 				<td th:text="${tempMotor.Depth}">
 				<td th:text="${tempMotor.Type}">
 				<td>
+				<div sec:authorize="hasRole('ADMIN')">
 				<a th:href="@{/motors/showFormForUpdate(motorId=${tempMotor.id})}"
 				class="btn btn-info btn-sm">
 					Update
@@ -50,12 +58,17 @@
 				   onclick="if (!(confirm('Are you sure you want to delete this motor?'))) return false">
 					Delete
 				</a>
+				</div>
 
 			</td>
 				
 			</tr>
 		</tbody>		
 	</table>
+
+	<form action="#" th:action="@{/logout}" method="POST">
+		<input class="btn btn-info btn-md" type="Submit" value="Logout" />
+	</form>
 	
 </div>
 	
