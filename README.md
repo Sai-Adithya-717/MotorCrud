@@ -18,7 +18,7 @@ This is a Simple Basic Springboot RestAPi Webapplication Project
    *  Hibernate, JPA for communicating with database
 
 #### Springboot Application with Crud Operations using Spring Security - Go to [changes_branch](https://github.com/WideCarSupporter/MotorCrud/tree/changes_branch/src)
-  * CRUD OPERATIONS WITH SECURITY - [Click](https://github.com/WideCarSupporter/MotorCrud/tree/changes_branch/src)
+  * CRUD Operations With Security - [Click](https://github.com/WideCarSupporter/MotorCrud/tree/changes_branch/src)
 
 #### Springboot Application with UI helpful using Thymleaf with UI required Security - Go to [dev_branch](https://github.com/WideCarSupporter/MotorCrud/tree/dev_branch/src)
-  * USING THYMLEAF FOR UI - [Click](https://github.com/WideCarSupporter/MotorCrud/tree/dev_branch/src)
+  * Using Thymleaf for UI - [Click](https://github.com/WideCarSupporter/MotorCrud/tree/dev_branch/src)
