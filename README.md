@@ -12,3 +12,5 @@ To View the Main Webpage First the User need to Authenticated using Custom made 
 #### Custom Login - [First need to Login to View](https://github.com/WideCarSupporter/MotorCrud/blob/dev_branch/src/main/resources/templates/motors/fancy-login.html)
 #### Main Webpage - [View all the Data in Database](https://github.com/WideCarSupporter/MotorCrud/blob/dev_branch/src/main/resources/templates/motors/list-motors.html)
 #### Update The Data Form - [Add / Changes to Data](https://github.com/WideCarSupporter/MotorCrud/blob/dev_branch/src/main/resources/templates/motors/motor-form.html)
+
+##### Note: The Entity Table need to be created in Database with same number of columns and Roles,authorities tables need to be created and changes withrespect to schema / database and user and password to login to database user credentials need to be updated in application properties.
