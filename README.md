@@ -15,7 +15,7 @@ This is a Simple Basic Springboot RestAPi Webapplication Project
    *  Spring Data Binding and retrieval of data from database
    *  Spring Security and Spring Custom Security
    *  Spring MVC and Thymeleaf For UI
-   *  Hibernate, JPA for communicating with database
+   *  Spring Aop, Hibernate, JPA for communicating with database
 
 #### Springboot Application with Crud Operations using Spring Security - Go to [changes_branch](https://github.com/WideCarSupporter/MotorCrud/tree/changes_branch)
   * CRUD Operations With Security - [Click](https://github.com/WideCarSupporter/MotorCrud/tree/changes_branch/src)
